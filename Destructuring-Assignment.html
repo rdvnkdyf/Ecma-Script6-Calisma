@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Destructuring -Assignment </title>
+    </head>
+    <body>
+        <script>
+            //------------------example 1 
+            //prior ecmascript 6
+            // function getScores(){
+            //     return [70,80,90];
+            // }
+            //let scores=getScores();
+            // let x = scores[0], 
+            // y = scores[1], 
+            // z = scores[2];
+            // console.log(x," ",y," ",z);
+
+            //---------------------ecmascript 6
+            // let [x,y,z]=getScores();
+            // console.log(x); // 70
+            // console.log(y); // 80
+            // console.log(z); // 90
+
+            //-----------------------example 2 
+            // function getScores() {
+            //   return [70, 80];
+            //  }
+
+            // let [x, y, z] = getScores();
+
+            // console.log(x); // 70
+            // console.log(y); // 80
+            // console.log(z); // undefined
+
+            //------------------------example 3 
+            // function getScores() {
+            // return [70, 80, 90, 100];
+            //  }
+
+            // // let [x, y, z] = getScores();
+
+            // // console.log(x); // 70
+            // // console.log(y); // 80
+            // // console.log(z); // 90
+
+            // //rest syntax 
+            // let [x, y ,...args] = getScores();
+            // console.log(x); // 70
+            // console.log(y); // 80
+            // console.log(args); // [90, 100]
+
+            //------------------------------example 4
+            // let a, b;
+            // [a, b] = [10, 20];
+            // console.log(a); // 10
+            // console.log(b); // 20
+
+            //-----------------------------------example 5 
+            // function getItems() {
+            //  return [10, 20];
+            // }
+
+            // // let items = getItems();
+            // // let thirdItem = items[2] != undefined ? items[2] : 0;
+            //  let[,,thirdItem=0]=getItems();
+            // console.log(thirdItem); // 0
+
+            //-------------------------example 6
+            // let a, b;
+            // [a = 1, b = 2] = [10];
+            // console.log(a); // 10
+            // console.log(b); // 2
+
+            //-------------------------example 7
+            // function getItems() {
+            //     return null;
+            //  }
+
+            //  let [x = 1, y = 2] = getItems();//ncaught TypeError: getItems is not a function or its return value is not iterable
+            
+            //--------------------------example 8
+            // function getItems() {
+            //    return null;
+            // }
+
+            // let [a = 10, b = 20] = getItems() || [];
+
+            // console.log(a); // 10
+            // console.log(b); // 20
+
+            //--------------------------example 9
+        //     function getProfile() {
+        //   return [
+        //    'John',
+        //     'Doe',
+        //     ['Red', 'Green', 'Blue']
+        //   ];
+        //    }
+
+        //    let [
+        //   firstName,
+        //   lastName,
+        //  [
+        //     color1,
+        //     color2,
+        //     color3
+        // ]
+        //  ] = getProfile();
+
+        // console.log(color1, color2, color3); // Red Green Blue
+
+        //---------------------------example 10 
+        // let a=10,b=20;
+        // [a,b]=[b,a];
+        // console.log("yeni a:",a);//20 
+        // console.log("yeni b:",b);//10
+
+        //--------------------------example 11
+        function stat(a,b){
+            return[
+                a+b,
+                (a+b)/2,
+                a-b
+            ]
+        }
+        let[sum,average,difference]=stat(20,10);
+        console.log(sum, average, difference); // 30, 15, 10
+        </script>
+    </body>
+</html>

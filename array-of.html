@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array.of </title>
+    </head>
+    <body>
+        <script>
+            //----------------------------example 1
+            // let numbers=new Array(2);
+            // console.log(numbers.length);//2
+            // console.log(numbers[0]);//undefined 
+
+            //-----------------------------example 2
+            //   let numbers=new Array("2");
+            //   console.log(numbers.length);//1 
+            //   console.log(numbers[0]);//"2"
+
+            //---------------------------example 3 
+            //  let numbers=Array.of(3);
+            //  console.log(numbers.length); // 1
+            //  console.log(numbers[0]); // 3
+
+            //--------------------------------example 4 
+            // let chars=Array.of('A','B','C');
+            // console.log(chars.length); // 3
+            // console.log(chars); // ['A','B','C']
+
+            //--------------------------------example 5
+            if(!Array.of){
+                Array.of=function(){
+                    return Array.prototype.slice.call(arguments);
+                }
+            }
+
+        </script>
+    </body>
+</html>

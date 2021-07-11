@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>static methods  </title>
+    </head>
+    <body>
+        <script>
+            //----------------------------------example 1
+        //     function Person(name){
+        //         this.name=name;
+        //     }
+        //     Person.prototype.getName=function(){
+        //         return this.name;
+        //     }
+        //    Person.createAnonymous=function(gender){
+        //        let name=gender=="male" ?"John Doe":"Jane Doe";
+        //        return new Person(name);
+        //    }
+        //    var anonymous  = Person.createAnonymous()
+        //    console.log(anonymous);
+
+           //---------------------------example 2   ecmascript 6 static methods 
+            class Person{
+                constructor(name){
+                    this.name=name;
+                }
+                getName(){
+                    return this.name;
+                }
+                static createAnonymous(gender){
+                    let name = gender == "male" ? "John Doe" : "Jane Doe";
+		            return new Person(name);
+                }
+            }
+            // let anonymous = Person.createAnonymous("male");
+            // console.log(anonymous);
+
+            let person = new Person('James Doe');
+            let anonymous = person.createAnonymous("male");  //Uncaught TypeError: person.createAnonymous is not a function
+            
+            
+        </script>
+    </body>
+</html>

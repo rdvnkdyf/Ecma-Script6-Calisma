@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>const </title>
+    </head>
+    <body>
+        <script>
+            //example 1 
+            // value=3.41;
+            // const CONSTANT_NAME = value;
+            // let a=10;
+            // a=20;
+            // a=a+5;
+            // console.log(a);//25 
+            // const RATE = 0.1;
+            // RATE = 0.2; // TypeError  //const.html:16 Uncaught TypeError: Assignment to constant variable
+            // const RED; // SyntaxError Uncaught SyntaxError: Missing initializer in const declaration
+
+            //example 2 
+            // const person={age:20};
+            // person.age=30;//ok 
+            // console.log(person.age);//30
+            //person = {age: 40}; // TypeError  ;//const.html:23 Uncaught TypeError: Assignment to constant variable.
+            // const person=Object.freeze({age:20});
+            // person.age=30;//TypeError 
+            // const company=Object.freeze({
+            //     name:'ABC corp',
+            //     address:{
+            //         street:'Nort 1st street',
+            //         city:'San Jose',
+            //         state:'CA',
+            //         zipcode:95134
+            //     }
+            // });
+            // company.address.country='USA';// ok 
+            // console.log(company.address.country);
+
+            //example 3
+            // const colors=['red'];
+            // colors.push('green');
+            // console.log(colors);//["red","green"]
+            // colors.pop();
+            // colors.pop();
+            // console.log(colors);//[]
+            // colors=[];//const.html:45 Uncaught TypeError: Assignment to constant variable
+
+            //example 4 
+            // let scores=[75,80,85];
+            // for(let score of scores){
+            //     console.log(score);
+            // }
+        //     let scores = [75, 80, 95];
+        //      for (const score of scores) {
+        //     console.log(score);
+        //    }
+
+        //    for (const i = 0; i < scores.length; i++) { // TypeError
+        //    console.log(scores[i]);   ///const.html:57 Uncaught ReferenceError: scores is not defined
+        //   } 
+
+        
+        </script>
+    </body>
+</html>

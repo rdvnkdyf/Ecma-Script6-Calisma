@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>rest-parameters  </title>
+    </head>
+    <body>
+        <script>
+            //----example 1 
+            // function fn(a,b,...args){
+            //     //...
+            //     console.log("cok sayıda parametre dostumm");
+            // }
+            // fn();
+            // fn(1,2,3,'A','B','C');
+            // function foo(a,...rest,b){
+            //     //error 
+            //     console.log("Hata biraderim hata");//Uncaught SyntaxError: Rest parameter must be last formal parameter
+            // }
+
+            //-----example 2 
+            // function sum(...args){
+            //     let total=0;
+            //     for(const a of args){
+            //         total+=a;
+            //     }
+            //     return total;
+            // }
+            // console.log(sum(1,2,3));
+
+           //----example 3   ecma script 6 rest parameters 
+        //    function sum(...args){
+        //        return args.filter(e=>typeof e=='number').reduce((prev,curr)=>prev+curr);
+        //    }
+        //    let result=sum(10,'Hi',null,undefined,20);
+        //    console.log(result);
+
+        //    //---example 4  without  rest parameters ecma script 5 
+        //    function sum(){
+        //        return Array.prototype.filter.call(arguments,e=>typeof e==='number')
+        //        .reduce((prev,curr)=>prev+curr);
+        //    }
+        //    console.log(sum(12,12,"asdasd",null));
+
+        //----example 5 
+        // function filterBy(type,...args){
+        //     return args.filter(e=>typeof e===type)
+        // }
+        // console.log(filterBy(Int32Array,(12,22.3,"asdasd",true)));
+
+        //--example 6 
+        const combine=(...args)=>{
+            return args.reduce((prev,curr)=>prev+' '+curr);
+        }
+        let message=combine('JavaScript','Rest','Parameters');// => 
+        console.log(message);//Javascript Rest Parameters 
+
+        //--example 7
+        var showNumbers = new Function('...numbers', 'console.log(numbers)');
+showNumbers(1, 2, 3);
+        </script>
+    </body>
+</html>

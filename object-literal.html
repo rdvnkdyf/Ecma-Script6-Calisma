@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>object literal </title>
+    </head>
+    <body>
+        <script>
+            //example 1  ecma script 6 öncesi
+            // function createMachine(name,status){
+            //     return{
+            //         name:name,
+            //         status:status
+            //     };
+            // }
+
+            //-----------example 2 ecmascript 6
+            // function createMachine(name,status){
+            //     return{
+            //         name,
+            //         status
+            //     };
+            // }
+
+            //-----------------example 3
+            // let name='Computer',status='On';
+            // let machine={
+            //     name,
+            //     status
+            // };
+            // console.log(machine.status);
+
+            //--------------------example 4  ecma script 6 öncesi
+            // let name='machine name';
+            // let machine={
+            //     [name]:'server',
+            //     'machine hours':10000
+            // };
+            // console.log(machine[name]);//server
+            // console.log(machine['machine hours']);//10000
+
+            //--------------------example 5 ecmascript 6
+            // let prefix='machine';
+            // let machine={
+            //     [prefix+' name']:'server',
+            //     [prefix+ ' hours']:10000
+            // };
+            // console.log(machine['machine name']); // server
+            // console.log(machine['machine hours']); // 10000
+
+            //----------------------example 6 ecmascript 6 öncesi 
+            // let server={
+            //     name:'Server',
+            //     restart:function(){
+            //         console.log('The'+this.name+' is restarting .......');
+            //     }
+            // };
+            // console.log(server);
+
+            //----------------------------example 7 ecmascript 6
+            // let server = {
+            //  name: 'Server',
+            //  restart() {
+            //        console.log(`The ${this.name} is restarting...`);
+            //   }
+            //   };
+            //   console.log(server);
+
+            //----------------------------example 8 
+            let server = {
+              name: 'Server',
+            restart() {
+                 console.log(`The ${this.name} is restarting!`);
+            },
+             'starting up'() {
+            console.log(`The ${this.name} is starting up!`);
+            }
+            };
+            server['starting up']();
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Proxy</title>
+    </head>
+    <body>
+        <script>
+            // //----------------------------example 1
+            // const user = {
+            //     firstName: 'John',
+            //     lastName: 'Doe',
+            //     email: 'john.doe@example.com',
+            // }
+            // const handler={
+            //     get(target,property){
+            //         console.log(`Property ${property} has been read.`);
+            //         return target[property];
+            //     }
+            // }
+            // const proxyUser = new Proxy(user, handler);
+            // console.log(proxyUser.firstName);
+            // console.log(proxyUser.lastName);
+            // user.firstName = 'Jane';
+            // console.log(proxyUser.firstName);
+            // proxyUser.lastName = 'William';
+            // console.log(user.lastName);
+             
+            //---------------------------------------example 2 
+            // const user = {
+            //     firstName: 'John',
+            //     lastName: 'Doe',
+               
+            // }
+            // const handler={
+            //     get(target,property){
+            //         return property === 'fullName' ?
+            //               `${target.firstName} ${target.lastName}` :
+            //                target[property];
+                    
+            //     }
+            // };
+            // const proxyUser = new Proxy(user, handler);
+            // console.log(proxyUser.fullName);
+            
+            //-------------------------------------------example 3
+            // const user = {
+            //     firstName: 'John',
+            //     lastName: 'Doe',
+            //     age:20
+               
+            // }
+            // const handler={
+            //     set(target,property,value){
+            //         if(property=='age'){
+            //             if(typeof value!=='number'){
+            //                 throw new Error('Age must be a number.');
+            //             }
+            //             if(value<18){
+            //                 throw new Error('The user must be 18 or older.')
+            //             }
+            //         }
+            //        target[property]=value; 
+            //     }
+            // };
+            // const proxyUser=new Proxy(user,handler);
+            // // proxyUser.age = 'foo'; //Error: Age must be a number.
+            // proxyUser.age = 21; 
+            // console.log(proxyUser.age);
+
+            //-------------------------------------------------example 4
+            const user = {
+                firstName: 'John',
+                lastName: 'Doe',
+            }
+            const getFullName = function (user) {
+               return `${user.firstName} ${user.lastName}`;
+            }
+            const getFullNameProxy = new Proxy(getFullName, {
+            apply(target, thisArg, args) {
+                  return target(...args).toUpperCase();
+               }
+            });
+            console.log(getFullNameProxy(user)); // 
+        </script>
+    </body>
+</html>

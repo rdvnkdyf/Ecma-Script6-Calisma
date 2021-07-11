@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>let 1</title>
+    </head>
+    <body>
+        <script>
+            //example 1 
+            /*let variable_name;
+            variable_name=20; 
+            console.log(variable_name);*/ 
+
+            //example 2 
+            /*let x=10;
+            if(x==10){
+                let x=20;
+                console.log(x);//20 reference x inside the block
+            }
+            console.log(x); // 10: reference at the begining of the script
+            */
+           //example3 
+        //    var a=10;
+        //    console.log(window.a); //10
+        //    let b=20;
+        //    console.log(window.b);//undefined 
+
+        //example 4 
+        // for(var i=0;i<5;i++){
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },1000);
+        // }
+
+        //example 5 
+        //ecmascript 5 solving 
+        // for(var i=0;i<5;i++){
+        //     (function(j){
+        //         setTimeout(function(){
+        //             console.log(j);
+        //         },1000);
+        //     })(i);
+        // }
+        //ecmascript 6 solving 
+        // for(let i=0;i<5;i++){
+        //     setTimeout(function(){
+        //         console.log(i);
+        //     },1000);
+        // }
+        //ecmascript 6  solving --arrow functions 
+        // for(let i=0;i<5;i++){
+        //     setTimeout(()=>console.log(i),1000);
+        // }
+
+        //example 6
+        // var counter=0;
+        // var counter;
+        // console.log(counter);//0
+        // let exa=0;
+        // let exa;
+        // console.log(exa);//Uncaught SyntaxError: Identifier 'exa' has already been declared
+        // var counter=0;
+        //  {console.log(counter);
+        //    let counter=10;  //let.html:62 Uncaught ReferenceError: Cannot access 'counter' before initialization
+        //  }
+
+        //Temporal death zone (TDZ)
+        // {
+        //     //enter new scope,TDZ starts 
+        //     let log=function(){
+        //         console.log(foo);//foo declared later 
+        //     }
+        //     // This is the TDZ and accessing foo 
+        //     // would cause a ReferenceError
+        //     let foo=10;//TDZ ends 
+        //     log();//called outside TDZ
+        // }
+        {
+            //TDZ starts 
+            console.log(typeof bar);//undefined 
+            console.log(typeof foo);//ReferenceError
+            let foo;//TDZ ends
+            //let.html:80 Uncaught ReferenceError: Cannot access 'foo' before initialization
+        }
+        
+        </script>
+    </body>
+</html>

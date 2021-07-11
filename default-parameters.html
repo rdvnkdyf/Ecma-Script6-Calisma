@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>default-parameters  </title>
+    </head>
+    <body>
+        <script>
+            //--example 1
+        //    function say(message='Hi'){
+        //        console.log(message);
+        //    }
+        //    say();
+       
+        //  //--example 2
+        //  function add(x,y){
+        //      return x+y;
+        //  }
+        //  console.log(add(100,200));
+
+        //  //--example 3 
+        //  function say1(message){
+        //      console.log(message);
+        //  }
+        //  say1();//undefined
+        
+        //--example 4
+        // function say(message){
+        //     message=typeof message!=='undefined'?message:'Hi';
+        //     console.log(message);
+        // }
+        // say();//hi 
+        
+        // function fn(param1=default1,param2=default2,...){
+
+        // }
+
+        // function say(message='Hi'){
+        //     console.log(message);
+        // }
+        // say();//hi
+        // say(undefined);//Hi 
+        // say('Hello');//'Hello'
+
+        //--example 5 
+        // function createDiv(height='100px',width='100px',border='solid 1px red'){
+        //     let div=document.createElement('div');
+        //     div.style.height=height;
+        //     div.style.width=width;
+        //     div.style.border=border;
+        //     document.getElementsByTagName('body')[0].appendChild(div);
+        //     return div;
+        // }
+        // createDiv();
+        // createDiv(undefined,undefined,'solid 5px blue');
+
+        //--example 6 
+        // function put(toy,toyBox=[]){
+        //     toyBox.push(toy);
+        //     return toyBox;
+        // }
+        // console.log(put('Toy Car')); //->['Toy Car']
+        // console.log(put('Teddy Bear')); //->['Teddy Bear']
+
+        // function date(d=today()){
+        //     console.log(d);
+        // }
+        // function today(){
+        //     return (new Date()).toLocaleDateString("en-US");
+        // }
+        // date();
+        
+        // function requiredArg(){
+        //     throw new Error('The argument is required');
+            
+        // }
+        // function add(x=requiredArg(),y=requiredArg()){
+        //         return x+y;
+        //     }
+        // console.log(add(10,20));//ok
+        // //add(10);//error   //default-parameters.html:73 Uncaught Error: The argument is required
+
+        //--example 7
+        // function add(x=1,y=x,z=x+y){
+        //     return x+y+z;
+        // }
+        // console.log(add());//4 
+
+        // function substract(x=y,y=1){
+        //     return x-y;
+        // }
+        // console.log(substract(10));//Uncaught ReferenceError: Cannot access 'y' before initialization
+
+        //----example 8
+        // let taxRate=()=>0.1;
+        // let getPrice=function(price,tax=price*taxRate()){
+        //     return price+tax;
+        // }
+        // let fullPrice=getPrice(100);
+        // console.log(fullPrice);//110
+
+        //-------------example 9
+        function add(x,y=1,z=2){
+            console.log(arguments.length);
+            return x+y+z;
+        }
+        add(10);//1 
+        add(10,20);//2 
+        add(10,20,30);//3
+
+        </script>
+    </body>
+</html>

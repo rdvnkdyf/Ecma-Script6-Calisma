@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Promise Race</title>
+    </head>
+    <body>
+        <div id="container">
+            <button id="btnGet">Get Message</button>
+            <div id="message"></div>
+            <div id="loader"></div>
+        </div>
+        <script>
+            //-----------------------------------------------example 1
+//             const p1 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log('The first promise has resolved');
+//         resolve(10);
+//     }, 1 * 1000);
+
+// });
+
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log('The second promise has resolved');
+//         resolve(20);
+//     }, 2 * 1000);
+// });
+
+
+// Promise.race([p1, p2])
+//     .then(value => console.log(`Resolved: ${value}`))
+//     .catch(reason => console.log(`Rejected: ${reason}`));
+
+//----------------------------------------------------example 2 
+// const p1 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log('The first promise has resolved');
+//         resolve(10);
+//     }, 1 * 1000);
+
+// });
+
+// const p2 = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.log('The second promise has rejected');
+//         reject(20);
+//     }, 2 * 1000);
+// });
+
+
+// Promise.race([p1, p2])
+//     .then(value => console.log(`Resolved: ${value}`))
+//     .catch(reason => console.log(`Rejected: ${reason}`));  
+
+//--------------------------------------------------------example 3 
+const DATA_LOAD_TIME = 5000;
+
+function getData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const message = 'Promise.race() Demo';
+            resolve(message);
+        }, DATA_LOAD_TIME);
+    });
+}
+function showContent(message) {
+    document.querySelector('#message').textContent = message;
+}
+const TIMEOUT = 500;
+
+function timeout() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => reject(), TIMEOUT);
+    });
+}
+function showLoadingIndicator() {
+    document.querySelector('#loader').className = 'loader';
+}
+
+function hideLoadingIndicator() {
+    document.querySelector('#loader').className = '';
+}
+// handle button click event
+const btn = document.querySelector('#btnGet');
+
+btn.addEventListener('click', () => {
+    // reset UI if users click the 2nd, 3rd, ... time
+    reset();
+    
+    // show content or loading indicator
+    Promise.race([getData()
+            .then(showContent)
+            .then(hideLoadingIndicator), timeout()
+        ])
+        .catch(showLoadingIndicator);
+});
+// reset UI
+function reset() {
+    hideLoadingIndicator();
+    showContent('');
+}
+
+
+        </script>
+    </body>
+</html>

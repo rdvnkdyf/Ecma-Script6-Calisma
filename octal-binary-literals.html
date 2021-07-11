@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>octal and binary literals  </title>
+    </head>
+    <body>
+        <script>
+            //-----------------example 1
+
+        //    let a=051;
+        //    console.log(a);//41 
+
+        //     //-------------------------example 2 
+        //     let b=058;//invalid octal 
+        //     console.log(b);//58 
+
+            //-------------------------example 3 
+            // "use strict"
+            // let b=058;//invalid octal 
+            // console.log(b); //Uncaught SyntaxError: Decimals with leading zeros are not allowed in strict mode.
+        
+        //-----------------example 4
+        //  let c=0o51;
+        //  console.log(c);//41 
+
+        //------------------example 5 
+        // let d=0o58;
+        // console.log(d);//Syntax error octal-binary-literals.html:27 Uncaught SyntaxError: Invalid or unexpected token
+       
+       //-----------------------example 6
+    //    let e=parseInt('111',2);
+    //    console.log(e);//7
+
+    //------------------------------example 7
+      let f=0b111;  //ecma script 6 
+      console.log(f);//7
+
+        </script>
+    </body>
+</html>

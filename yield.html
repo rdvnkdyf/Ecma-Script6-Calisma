@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>yield </title>
+    </head>
+    <body>
+        <script>
+            //-------------------------------example 1
+            // [variable_name] = yield [expression];
+
+            //-------------------------------------example 2 
+            // function * foo(){
+            //     yield 1;
+            //     yield 2;
+            //     yield 3;
+
+            // }
+            // let f=foo();
+            // console.log(f.next());
+
+            //-----------------------------------example 3 
+            // function* bar() {
+            //   yield;
+            // }
+            // let b = bar();
+            // console.log(b.next()); 
+
+            //----------------------------example 4 
+            // function * generate(){
+            //     let result=yield;
+            //     console.log(`result is ${result}`);
+            // }
+            // let g=generate();
+            // console.log(g.next());
+            // console.log(g.next(1000));
+
+            //--------------------------example 5
+            // function * baz(){
+            //   let arr=[yield,yield];
+            //   console.log(arr);
+            // }
+            // var z=baz();
+            // console.log(z.next());
+            // console.log(z.next(1));
+            // console.log(z.next(2));
+
+            /////////////////////////////example 6
+            // function* yieldArray() {
+            //    yield 1;
+            //    yield [ 20, 30, 40 ];
+            // }
+
+            // let y = yieldArray();
+            // console.log(y.next()); 
+            // console.log(y.next()); 
+            // console.log(y.next());
+
+            //--------------------------------------example 7
+            function *yieldArrayElements(){
+                yield 1;
+                yield* [20,30,40];
+            }
+            let a=yieldArrayElements();
+            console.log(a.next());// { value: 1, done: false }
+            console.log(a.next());// { value: 20, done: false }
+            console.log(a.next());// { value: 30, done: false }
+            console.log(a.next());// { value: 40, done: false }
+
+        </script>
+    </body>
+</html>

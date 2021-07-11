@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Object Is</title>
+    </head>
+    <body>
+        <script>
+            //----------------------------example 1
+            // let amount = +0,
+            // volume = -0;
+            // console.log(volume === amount);
+
+            //--------------------------------example 2 
+            // let amount = +0,
+            // volume = -0;
+            // console.log(Object.is(amount, volume));
+
+            //------------------------------------example 3 
+            // let quantity = NaN;
+            // console.log(quantity === quantity);
+
+            //----------------------------------------example 4 
+            let quantity = NaN;
+            console.log(Object.is(quantity, quantity));
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>let-vs-var </title>
+    </head>
+    <body>
+        <script>
+            //example 1
+            // var counter;
+            // counter=15; 
+            // console.log(counter);
+
+            //example 2
+            // function increase(){
+            //     var counter=10;
+            //     console.log(counter);
+            // }
+            // increase();
+
+            //example 3 
+            // for(var i=0;i<5;i++){
+            //     console.log(`Insıde the loop: ${i}`);
+            // }
+            // console.log(`Outside the loop:${i}`);
+
+            //example 4 
+            for(let i=0;i<5;i++){
+                console.log(`Insıde the loop: ${i}`);
+            }
+            console.log(`Outside the loop:${i}`);  //Uncaught ReferenceError: i is not defined
+        </script>
+    </body>
+</html>

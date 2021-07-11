@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Class 1 </title>
+    </head>
+    <body>
+        <script>
+            //-------------------example 1  prior ecmascript 6
+            // function Person(name) {
+            //  this.name = name;
+            // }
+
+            // Person.prototype.getName = function () {
+            //     return this.name;
+            //      };
+            // var john = new Person("John Doe");
+            // console.log(john.getName());
+            // //--instanceof 
+            // console.log(john instanceof Person); // true
+            // console.log(john instanceof Object); // true
+
+            //-------------------------example2  ecmascript 6
+            class Person {
+            constructor(name) {
+             this.name = name;
+            }
+            getName() {
+             return this.name;
+            }
+        }
+        // let john = new Person("John Doe");
+        // let name = john.getName();
+        // console.log(name); // "John Doe"
+        // //--typeof 
+        // console.log(typeof Person); // function
+        // //---instanceof
+        // console.log(john instanceof Person); // true
+        // console.log(john instanceof Object); // true
+        //Class vs.Custom Type
+        //let john = new Person("John Doe");//Uncaught SyntaxError: Identifier 'john' has already been declared
+        let john = Person("John Doe"); //Uncaught TypeError: Class constructor Person cannot be invoked without 'new'
+        
+        </script>
+    </body>
+</html>

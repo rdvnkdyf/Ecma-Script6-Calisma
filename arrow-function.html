@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>arrow function 1</title>
+    </head>
+    <body>
+        <script>
+            //-------------------------example 1
+            // let add=function(x,y){
+            //     return x+y;
+            // }
+            // console.log(add(10,20));//30 
+
+            //----------------------------------example 2 
+            // let add1=(x,y)=>x+y; 
+            // console.log(add1(10,20)); //30
+
+            //------------------------------------------example 3 
+            // let add=(x,y)=>{return x+y;};
+            // console.log(typeof add); // function
+            // console.log(add instanceof Function); // true
+
+            // //-------------------------------------------example 4 
+            // (p1, p2, ...pn) => expression;
+            // => { return expression; }
+
+            //---------------------------------------------example 5 
+            // let numbers=[4,2,6];
+            // numbers.sort(function(a,b){
+            //     return b-a;
+            // });
+            // console.log(numbers);//[6,4,2]
+
+            //-------------------------------------example 6 
+            // let numbers=[4,2,6];
+            // numbers.sort((a,b)=>b-a);
+            // console.log(numbers);//[6,4,2]
+
+            //-------------------------------example 7 
+            // (p1)=>{statements}
+            // p=>{statements}
+
+            //--------------------------------example 8 
+            // let names=['John','Mac','Peter'];
+            // let lengths=names.map(name=>name.length);
+            // console.log(lengths);
+
+            //--------------------------------example 9 
+            // ()=>{statements}
+
+            //------------------------------------example 10 
+            // let logDoc=()=>console.log(window.document);
+            // logDoc();
+             
+            //-----------------------------------------example 11 
+            // let multiply = (x,y) 
+            // => x * y;   //Uncaught SyntaxError: Unexpected token '=>'
+          
+            //---------------------------example 12 
+            // let multiply = (x,y) => 
+            // x * y;
+
+            //--------------------------example 13 
+            // let multiply=(
+            //     x,
+            //     y
+            // )=> 
+            // x*y;
+            
+            //---------------------------------example 14 
+            //10 + 20;
+
+            //------------------------------------example 15 
+//             if (x === y) {
+//     console.log('x equals y');
+// }
+
+           //---------------------------------------example 16 
+        //    let square=x=>x*x;
+        //    console.log(square);
+           
+         //-----------------------------------------example 17
+        //    let except = msg => {
+        //        throw msg;
+        //    };
+
+        //------------------------------example 18 
+        // let setColor=function(color){
+        //     return{value:color}
+        // };
+        // let backgroundColor=setColor('Red');
+        // console.log(backgroundColor.value);//"Red"
+        
+        //-----------------------------------example 19 
+        // p => {object:literal}    //error
+
+        //----------------------------------example 20 
+        // let setColor = color => {value: color };
+
+        //-----------------------------------------------example 21 
+        // let setColor1 = color => ({value: color });
+
+        //---------------------------------------example   22
+        // function Car(){
+        //     this.speed=0;
+        //     this.speedUp=function(speed){
+        //         this.speed=speed;
+        //         setTimeout(function(){
+        //             console.log(this.speed);//undefined
+        //         },1000);
+        //     };
+        // }
+        // let car=new Car();
+        // car.speedUp(50);
+
+        //--------------------------------------------------example 23 
+        // function Car() {
+        //      this.speed = 0;
+
+        //      this.speedUp = function (speed) {
+        //               this.speed = speed;
+        //               let self = this;
+        //               setTimeout(function () {
+        //                      console.log(self.speed);
+        //                 }, 1000);
+
+        //     };}
+        
+        // let car = new Car();
+        // car.speedUp(50); // 50;
+
+        //-----------------------------------------------------example 24 
+        // function Car(){
+        //     this.speed=0;
+        //     this.speedUp=function(speed){
+        //         this.speed=speed;
+        //         setTimeout(
+        //             ()=>console.log(this.speed),1000
+        //         );
+        //     }
+        // }
+        // let car=new Car();
+        // car.speedUp(50);//50
+        
+        //----------------------------------------------------------example 25 
+        // function show() {
+        //         return x => x + arguments[0];
+        // }
+
+        // let display = show(10, 20);
+        // let result = display(5);
+        // console.log(result); // 15
+
+        //--------------------------------------------------example 26 
+        // function dump( message ) {
+        //       console.log(message);
+        // }
+        // console.log(dump.hasOwnProperty('prototype')); // true
+
+        //-------------------------------------------------------example 27 
+        let dump=message=>console.log(message);
+        console.log(dump.hasOwnProperty('prototype'));//false
+
+        </script>
+
+    </body>
+</html>
